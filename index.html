@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protocol</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: "Poppins", sans-serif;
+            margin: 0;
+            padding: 5px 10px;
+            background-color: rgb(20, 20, 20);
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: gray;
+            padding: 10px;
+            font-size: 1.1rem;
+            border-radius: 10px;
+        }
+
+        .tags>a {
+            text-decoration: none;
+        }
+
+        .intro {
+            text-align: center;
+        }
+
+        .intro>h1 {
+            background: linear-gradient(to right, red, blue);
+            color: transparent;
+            -webkit-background-clip: text;
+            text-shadow: 0 0 60px rgba(255, 0, 0, 0.466);
+            animation: anime 1s infinite alternate;
+        }
+
+        @keyframes anime {
+            100% {
+                text-shadow: 0 0 60px rgba(0, 0, 255, 0.466);
+            }
+        }
+
+        .intro>p {
+            font-size: 0.8rem;
+            font-weight: 400;
+            max-width: 70vw;
+            margin: 0 auto;
+        }
+
+        .slider {
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .images {
+            width: 60vw;
+            max-width: 400px;
+            overflow-x: hidden;
+            border-radius: 10px;
+        }
+
+        .image {
+            display: flex;
+            transition: ease-in-out 0.5s;
+        }
+
+        .image>img {
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .left,
+        .right {
+            margin: 10px;
+            cursor: pointer;
+            height: 40px;
+            border-radius: 50%;
+        }
+        .services{
+            margin-top: 30px;
+            border: 2px solid;
+            display: flex;
+        }
+        .servicesLeft{
+            border: 2px solid;
+            width: 50vw;
+        }
+        .servicesLeft>ul{
+            padding: 0;
+        }
+        .servicesLeft>ul>li{
+            border: 2px solid red;
+            list-style: none;
+            padding: 5px;
+            cursor: pointer;
+        }
+        .servicesRight{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40vw;
+            flex-direction: column;
+        }
+        .servicesRight>img{
+            width: 35vw;
+            border-radius: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <nav>
+        <div class="l0go">PROTOCAL</div>
+        <div class="tags">
+            <a href="">SERVICES</a>
+            <a href="">ABOUT</a>
+            <a href="">CONTACT</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="intro">
+            <h1>Hi , I am Prolay , A Professional Photo And Videographer</h1>
+            <p>I wanna Help Some People To Get Beautiful Images & Videos To Discover Their Journey or Adventure and Make
+                The Event Memorable</p>
+        </div>
+
+        <div class="slider">
+            <img src="left.svg" alt="<" class="left">
+            <div class="images">
+                <div class="image">
+                    <img src="_MG_9737.JPG" alt="">
+                    <img src="IMG_1881.JPG" alt="">
+                    <img src="IMG_1889.JPG" alt="">
+                </div>
+            </div>
+            <img src="right.svg" alt=">" class="right">
+        </div>
+        <div class="services">
+            <div class="servicesLeft">
+                <h3>SERVICES PROVIDED</h3>
+                <UL>
+                    <li>PHOTO SHOOT</li>
+                    <li>VIDEO GRAPHY</li>
+                    <li>EDITING</li>
+                    <li>ALBUM MAKING</li>
+                    <li>PRE-WEDDING SHOOT</li>
+                    <li>EQUIPMENT RENTAL</li>
+                </UL>
+            </div>
+            <div class="servicesRight">
+                <img src="IMG_1889.JPG">
+                <img src="IMG_1889.JPG">
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const left = document.querySelector(".left");
+        const right = document.querySelector(".right");
+        const image = document.querySelector(".image");
+        const len = document.querySelectorAll(".image img").length
+
+        let page = 1;
+
+        function showNext() {
+            if (page >= len) {
+                image.setAttribute("style", `transform: translate(0%)`)
+                page = 1;
+            } else {
+                image.setAttribute("style", `transform: translate(-${page * 100}%)`)
+                page++;
+            }
+        }
+        function showPrev() {
+            if (page <= 1) {
+                image.setAttribute("style", `transform: translate(-${(len - 1) * 100}%)`)
+                page = len
+            } else {
+                image.setAttribute("style", `transform: translate(-${(page - 2) * 100}%)`)
+                page--;
+            }
+        }
+
+        right.addEventListener('click', () => {
+            showNext();
+        })
+        left.addEventListener('click', () => {
+            showPrev();
+        })
+        setInterval(() => {
+            showNext();
+        }, 3000)
+    </script>
+</body>
+
+</html>
