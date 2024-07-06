@@ -21,7 +21,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background-color: gray;
+            background-color: rgb(33, 32, 32);
             padding: 10px;
             font-size: 1.1rem;
             border-radius: 10px;
@@ -29,13 +29,22 @@
 
         .tags>a {
             text-decoration: none;
+            color: rebeccapurple;
+        }
+
+        .container{
+            margin-top: 20px;
+            border-radius: 20px;
+            background-color: rgb(33, 32, 32);
+            padding-bottom: 5px;
         }
 
         .intro {
             text-align: center;
         }
 
-        .intro>h1 {
+        .intro>h1,
+        .achievements>div{
             background: linear-gradient(to right, red, blue);
             color: transparent;
             -webkit-background-clip: text;
@@ -87,34 +96,50 @@
             height: 40px;
             border-radius: 50%;
         }
-        .services{
-            margin-top: 30px;
-            border: 2px solid;
+        .achievements{
             display: flex;
+            justify-content: center;
+            margin-top: 15px;
         }
-        .servicesLeft{
-            border: 2px solid;
-            width: 50vw;
+        .achievements>div{
+            width: 20%;
+            max-width: 140px;
+            text-align: center;
+            border-radius: 10px;
+            line-height: 15px;
+            padding: 2px;
         }
-        .servicesLeft>ul{
+        .services{
+            margin: 30px 0;
+            display: flex;
+            border-radius: 20px;
+            background-color: rgb(33, 32, 32);
+            padding:15px;
+            flex-direction: column;
+            padding-bottom: 0;
+        }
+        .services>h3{
+            margin: 0;
+        }
+        .services>ul{
             padding: 0;
         }
-        .servicesLeft>ul>li{
-            border: 2px solid red;
+        .services>ul>li{
             list-style: none;
             padding: 5px;
             cursor: pointer;
         }
-        .servicesRight{
+        .contact{
             display: flex;
             align-items: center;
-            justify-content: center;
-            width: 40vw;
-            flex-direction: column;
-        }
-        .servicesRight>img{
-            width: 35vw;
-            border-radius: 5px;
+            text-decoration: none;
+            background-color: rgb(255, 132, 0);
+            color: white;
+            padding: 10px;
+            width: fit-content;
+            border: 2px solid;
+            border-radius: 10px;
+            margin: 20px auto;
         }
     </style>
 
@@ -124,13 +149,13 @@
     <nav>
         <div class="l0go">PROTOCAL</div>
         <div class="tags">
-            <a href="">SERVICES</a>
-            <a href="">ABOUT</a>
-            <a href="">CONTACT</a>
+            <a href="#services" >SERVICES</a>
+            <a href="#about">ABOUT</a>
+            <a href="https://wa.me/7479186431" target="_blank">CONTACT</a>
         </div>
     </nav>
 
-    <div class="container">
+    <div class="container" id="#about">
         <div class="intro">
             <h1>Hi , I am Prolay , A Professional Photo And Videographer</h1>
             <p>I wanna Help Some People To Get Beautiful Images & Videos To Discover Their Journey or Adventure and Make
@@ -141,15 +166,26 @@
             <img src="left.svg" alt="<" class="left">
             <div class="images">
                 <div class="image">
-                    <img src="_MG_9737.JPG" alt="">
-                    <img src="IMG_1881.JPG" alt="">
-                    <img src="IMG_1889.JPG" alt="">
+                    <img src="1.JPG" >
+                    <img src="2.JPG" >
+                    <img src="3.JPG" >
+                    <img src="4.JPG" >
+                    <img src="5.JPG" >
                 </div>
             </div>
             <img src="right.svg" alt=">" class="right">
         </div>
-        <div class="services">
-            <div class="servicesLeft">
+        <div class="achievements">
+            <div class="projects">250+ <br>Projects Completed</div>
+            <div class="photosClicked">5 Lakhs+ <br>Photos Clicked</div>
+            <div class="videosCaptured">10K+ <br>Videos Captured</div>
+            <div class="albumsCreated">50+ <br>Albums Created</div>
+        </div>
+
+        <a href="https://wa.me/7479186431" target="_blank" class="contact">Let's Talk <img src="whatsapp.svg"></a>
+    </div>
+    
+        <div class="services" id="#services">
                 <h3>SERVICES PROVIDED</h3>
                 <UL>
                     <li>PHOTO SHOOT</li>
@@ -160,12 +196,8 @@
                     <li>EQUIPMENT RENTAL</li>
                 </UL>
             </div>
-            <div class="servicesRight">
-                <img src="IMG_1889.JPG">
-                <img src="IMG_1889.JPG">
-            </div>
         </div>
-    </div>
+    
 
 
     <script>
@@ -203,7 +235,7 @@
         })
         setInterval(() => {
             showNext();
-        }, 3000)
+        }, 5000)
     </script>
 </body>
 
